@@ -5,3 +5,4 @@ cooking = [title1, title2, title3]
 print(title1)
 print(title2)
 print(title3)
+print(cooking)
