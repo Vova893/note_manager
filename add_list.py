@@ -1,6 +1,6 @@
-title1 = input('Лучшие рецепты ')
-title2 = input('Рецепты первых блюд ')
-title3 = input('Рецепты вторых блюд ')
+title1 = input('Введите заголовок №1: ')
+title2 = input('Введите заголовок №2: ')
+title3 = input('Введите загловок №3: ')
 cooking = [title1, title2, title3]
 print(title1)
 print(title2)
