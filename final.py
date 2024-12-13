@@ -1,7 +1,7 @@
 title1 = input('Введите заголовок №1: ')
 title2 = input('Введите заголовок №2: ')
 title3 = input('Введите заголовок №3: ')
-cooking = [title1, title2, title3]
+list_title = [title1, title2, title3]
 print(title1)
 print(title2)
 print(title3)
@@ -14,5 +14,5 @@ created_date = input('Укажите дату создания заметки в
 issue_date = input('Укажите дату истечения заметки (дедлайн) в формате "день-месяц-год", пример "10-12-2024": ')
 
 
-dictionary = {1: username, title: cooking, 3: content, 4: status, 5: created_date, 6: issue_date,}
+dictionary = {1: username, title: list_title, 3: content, 4: status, 5: created_date, 6: issue_date,}
 print(dictionary)
