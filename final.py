@@ -5,7 +5,7 @@ list_title = [title1, title2, title3]
 print(title1)
 print(title2)
 print(title3)
-print(cooking)
+print(list_title)
 username = input('Введите имя пользователя: ')
 title = input('Введите заголовок заметки: ')
 content = input('Введите описание заметки: ')
