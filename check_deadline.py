@@ -15,7 +15,7 @@ issue_date = date1
 # issue_date = datetime.strptime(issue_date, '%d-%m-%Y')
 if current_date < issue_date:  # создаем условие для получения дедлайна
     date_deadline = issue_date - current_date  # получаем остаток днкй до дедлайна
-    print('До дедлайна осталось', date_deadline, 'дня.')
+    print('До дедлайна осталось', date_deadline.days, 'дня.')
 elif current_date > issue_date:  # создаем второе условие для получения дедлайна
     date_deadline2 = current_date - issue_date  # получем дни после истечения дедлайна
-    print('Внимане! Дедлайн истек', date_deadline2, 'дней назад.')
+    print('Внимане! Дедлайн истек', date_deadline2.days, 'дней назад.')
