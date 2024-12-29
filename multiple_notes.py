@@ -18,6 +18,8 @@ while True:
     if note_ == 'нет':  # создаем условие для прекращения цикла
         break
 
-for key, value in note1.items():  # анализируем список ивыводим список заметок
-    print(f'{key}: {value}')
-
+for i, note_ in enumerate(notizen):  # анализируем список ивыводим список заметок
+    print(f'\t______________\n'
+          f'Заметка №', i + 1)
+    for j, k in note_.items():
+        print(f'\t{j}: {k}')
