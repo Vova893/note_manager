@@ -78,7 +78,7 @@ def replase_the_issue_date():  # функция для внесения изме
             break
         except ValueError:
             print('\t Не правильный формат даты')
-    issue_date_1 = date1
+    issue_date_1 = date.strftime(date1, '%d-%m-%Y')
     note1['issue_date'] = issue_date_1
 
 
