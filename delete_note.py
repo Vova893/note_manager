@@ -13,19 +13,20 @@ for i, note_ in enumerate(notizen):  # выводим информацию о т
     for j, k in note_.items():
         print(f'\t{j}: {k}')
 
-delete_note = input('\fВведите имя пользователя или заголовок для удаления заметки: ')
+while True:
+    delete_note = input('\fВведите имя пользователя или заголовок для удаления заметки: ')
 
-for delete_dictionary in notizen:
-    if delete_dictionary['Имя'] == delete_note or delete_dictionary['Заголовок'] == delete_note:
-        print(f'\fВы хотите удалить заметку {delete_note} (да/нет):')
-        if input().lower() == 'да':
-            if delete_dictionary in notizen:
-                notizen.remove(delete_dictionary)
-                print(f'\fЗаметка {delete_note} успешно удалена. Остались следующие заметки: ')
-                break
-    else:
-        print('\fЗаметок с таким именем пользователя или заголовком не найдено!')
-        break
+    for delete_dictionary in notizen:
+        if delete_dictionary['Имя'] == delete_note or delete_dictionary['Заголовок'] == delete_note:
+            print(f'\fВы хотите удалить заметку {delete_note} (да/нет):')
+            if input().lower() == 'да':
+                if delete_dictionary in notizen:
+                    notizen.remove(delete_dictionary)
+                    print(f'\fЗаметка {delete_note} успешно удалена. Остались следующие заметки: ')
+                    break
+        else:
+            print('\fЗаметок с таким именем пользователя или заголовком не найдено!')
+    break
 
 for i, note_ in enumerate(notizen):
     print(f'\t______________\n'
