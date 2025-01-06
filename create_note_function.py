@@ -32,7 +32,7 @@ def create_note():
                 break
             except ValueError:
                 print('\t Не правильный формат даты')
-        issue_date = date1
+        issue_date = date.strftime(date1, '%d-%m-%Y')
 
         created_date = date.today().strftime('%d-%m-%Y')  # текущая дата
         #created_date = datetime.strptime(created_date, '%d-%m-%Y')  # смена типа данных на 'datetime.datetime'
