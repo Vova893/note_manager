@@ -2,7 +2,7 @@ from datetime import date, datetime
 
 
 file = open('filename.txt', 'w', encoding='utf-8')
-def create_note():
+def save_notes_to_file():
     notizen = []  # создали пустой список
     notes = 1
     while True:
@@ -38,7 +38,7 @@ def create_note():
         issue_date = date.strftime(date1, '%d-%m-%Y')
 
         created_date = date.today().strftime('%d-%m-%Y')  # текущая дата
-        #created_date = datetime.strptime(created_date, '%d-%m-%Y')  # смена типа данных на 'datetime.datetime'
+        
 
         note1 = {'Имя пользователя': username, 'Заголовок': title, 'Описание': content, 'Статус': status,
                  'Дата создания': created_date, 'Дедлайн': issue_date}  # создание словаря
@@ -62,5 +62,5 @@ def create_note():
 
 
 
-create_note()
+save_notes_to_file()
 file.close()
