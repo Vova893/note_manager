@@ -26,7 +26,7 @@ def create_note():
                 print('Число не подходит!')
 
         while True:  # цикл для проверки правильного формата даты при вводе
-            issue_date = input('\t Введите дату дедлайна (в формате день-месяц-год): ')
+            issue_date = input('\t Введите дату дедлайна (в формате день-месяц-год (20-01-2025)): ')
             try:
                 date1 = datetime.strptime(issue_date, '%d-%m-%Y')  # смена данных на 'datetime.datetime'
                 break
@@ -35,10 +35,10 @@ def create_note():
         issue_date = date.strftime(date1, '%d-%m-%Y')
 
         created_date = date.today().strftime('%d-%m-%Y')  # текущая дата
-        #created_date = datetime.strptime(created_date, '%d-%m-%Y')  # смена типа данных на 'datetime.datetime'
 
+        # создание словаря
         note1 = {'Имя': username, 'Заголовок': title, 'Описание': content, 'Статус': status,
-                 'Дата создания': created_date, 'Дедлайн': issue_date}  # создание словаря
+                 'Дата создания': created_date, 'Дедлайн': issue_date}  
 
         notizen.append(note1)  # добовляем словарь в список notizen
 
@@ -48,9 +48,9 @@ def create_note():
         elif note_.lower() == 'нет':  # создаем условие для прекращения цикла
             break
 
-
-    for i in notizen:
-        for key, value in i.items():  # анализируем список ивыводим список заметок
-            print(f'{key}: {value}')
-
+    for i, note_ in enumerate(notizen):  # Анализируем список и выводим список заметок
+        print(f'\t______________\n'
+              f'Заметка №', i + 1)
+        for j, k in note_.items():
+            print(f'\t{j}: {k}')
 create_note()
