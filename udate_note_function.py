@@ -1,9 +1,12 @@
 from datetime import date, datetime
 
+print('Текущие данные заметки:')
 note1 = {'username': 'Имя', 'title': 'Заголовок', 'content': 'Описание', 'status': 'Статус',
          'created_date': 'Дата создания', 'issue_date': 'Дедлайн'}
-for key, value in note1.items():  # выводим данные заметки
-    print(f'{key}: {value}')
+
+# выводим данные заметки
+for key, value in note1.items():
+    print(f'\t{key}: {value}')
 
 # функция выбора внесения изменени в заметку
 def update_note():
@@ -72,7 +75,7 @@ def replase_the_status():  # функция для внесения измене
 
 def replase_the_issue_date():  # функция для внесения изменений в issue_date
     while True:  # цикл для проверки правильного формата даты при вводе
-        issue_date_1 = input('\t Введите дату дедлайна (в формате день-месяц-год): ')
+        issue_date_1 = input('\t Введите дату дедлайна (в формате день-месяц-год (20-12-2024)): ')
         try:
             date1 = datetime.strptime(issue_date_1, '%d-%m-%Y')  # смена данных на 'datetime.datetime'
             break
