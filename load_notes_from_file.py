@@ -1,36 +1,24 @@
-from datetime import date, datetime
-import json
+import yaml
 
-with open('filename.txt', encoding='utf-8') as file:
-    info = file.read()
-    info = info.replace('\n', ';')
-    symbols = (',', '\t', '_', 'Список заметок:')
-    for sym in symbols:
-       info = info.replace(sym, '')
-    result = info.split('Заметка №1')
-    result.remove(';;')
-    for i in result:
-        result2 = i.split(';')
-    # symbols2 = ('')
-    # for k in result2:
-    #     result2.remove('')
-        print(result2)
-    # info = file.readlines()
-    # print(info)
+try:
+    # Прочитаем файл
+    with open('filename.yaml', encoding='utf-8') as file:
 
-    # symbols = ('\t______________\n', '\tСписок заметок:\n', 'Заметка №1\n')
-    # for i in symbols:
-    #     info.remove(i)
-    # for kei in info:
-    #     #sym = ('\t', '\n')
-    #
+        # Десериализуем из формата json в данные Python
+        notes = yaml.load(file, Loader=yaml.FullLoader)
+        if notes == None:
+            print('Файл пустой!')
 
-    #print(type(kei))
+        print(notes)
 
-        #for k in sym:
-         #   info.remove(k)
-
-
-
-    # print(info)
-    # print(result)
+# Обработка возможных ошибок
+except FileNotFoundError:
+    print('\tФайл не найден!')
+except UnicodeDecodeError:
+    print('\tНе удалось декодировать файл!')
+except PermissionError:
+    print('\tОшибка доступа к файлу!')
+except yaml.parser.ParserError:
+    print('Ваш файл не является допустимым YAML')
+except:
+    print('\tЧто-то случилось при запуске!')
