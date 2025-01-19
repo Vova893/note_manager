@@ -3,14 +3,17 @@ import yaml
 try:
     # Прочитаем файл
     with open('filename.yaml', encoding='utf-8') as file:
+        
+        def load_notes_from_file(filename):
+            # Десериализуем из формата json в данные Python
+            notes = yaml.load(file, Loader=yaml.FullLoader)
+            if notes == None:
+                print('Файл пустой!')
 
-        # Десериализуем из формата json в данные Python
-        notes = yaml.load(file, Loader=yaml.FullLoader)
-        if notes == None:
-            print('Файл пустой!')
-
-        print(notes)
-
+            print(notes)
+        
+        load_notes_from_file(file)
+        
 # Обработка возможных ошибок
 except FileNotFoundError:
     print('\tФайл не найден!')
