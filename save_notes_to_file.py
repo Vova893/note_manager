@@ -4,8 +4,10 @@ import yaml
 
 try:
     with open('filename.yaml', 'w', encoding='utf-8') as file:
-        def save_notes_to_file():
-            notizen = []  # создали пустой список
+        notizen = []  # создали пустой список
+        
+        def save_notes_to_file(notes, filename):
+            
 
             while True:
                 username = input('\tВведите имя пользователя: ')  # заполнение данных заметки
@@ -58,7 +60,7 @@ try:
             yaml.dump(notizen, file, sort_keys=False, indent=4, default_flow_style=False, allow_unicode=True)
 
 
-        save_notes_to_file()
+        save_notes_to_file(notizen, file)
 
 # Обработка возможных ошибок
 except FileNotFoundError:
