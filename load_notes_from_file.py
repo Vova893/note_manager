@@ -16,7 +16,8 @@ try:
         
 # Обработка возможных ошибок
 except FileNotFoundError:
-    print('\tФайл не найден!')
+    file = open('../filename.yaml', 'w', encoding='utf-8')
+    print('\tФайл не найден! Создан новый файл')
 except UnicodeDecodeError:
     print('\tНе удалось декодировать файл!')
 except PermissionError:
