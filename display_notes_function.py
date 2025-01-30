@@ -16,17 +16,18 @@ def display_notes(notes):
         if notizen == []:
             print('\t У вас нет сохранённых заметок.')
             break
-        else:
+         else:
             print('\t Список заметок:')
-            items_per_page = 5
-            page = 1
-            index = items_per_page * page
-            for number in notizen[index-1: index]:
-                for i, note_ in enumerate(notizen):
-                    print(f'\t______________\n'
-                          f'Заметка №', i + 1)
-                    for j, k in note_.items():
-                        print(f'\t{j}: {k}')
-            break
 
+
+            for i, note_ in enumerate(notizen):
+                print(f'\t______________\n'
+                      f'Заметка №', i + 1)
+                for j, k in note_.items():
+                    print(f'\t{j}: {k}')
+
+            break
+        
+        
+        
 display_notes(notizen)
